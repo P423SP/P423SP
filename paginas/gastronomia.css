@@ -1,0 +1,21 @@
+@media (max-width: 1653px) {
+  .card-deck {
+    display: flex;
+  }
+  .card {
+    display: block;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  #informacion {
+    display: block;
+    margin-left: 600px;
+    margin-top: 10px;
+  }
+}
+
+.card {
+  margin-left: 10px;
+  margin-right: 10px;
+}

@@ -1,0 +1,119 @@
+
+@media (max-width: 1670px) {
+    html {
+        font-size: 13pt;
+    }
+}
+
+@media (max-width: 1024px) {
+    html {
+        font-size: 13pt;
+    }
+}
+
+@media (max-width: 700px) {
+    html {
+        font-size: 10pt;
+    }
+}
+
+
+@media (max-width: 550px) {
+    html {
+        font-size: 9pt;
+    }
+}
+
+body {
+    background-color: rgba(255, 255, 255, 0.9);
+    min-height: 100vh;
+}
+
+.btn-xs {
+    font-size: 0.7rem !important;
+    padding: 0.2rem 0.4rem;
+}
+
+*:focus {
+    outline: none;
+}
+
+.sombra,
+.modal .modal-footer button {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+.claveValor {
+    font-weight: initial;
+    white-space: nowrap;
+}
+
+.claveValor>span {
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    opacity: 0;
+    animation: fadeIn ease-in 1;
+    -moz-animation: fadeIn ease-in 1;
+    -webkit-animation: fadeIn ease-in 1;
+    animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+}
+
+.modal .modal-header {
+    padding: 0.1em 0.2em;
+}
+
+.modal .modal-content {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.modal .modal-body {
+    padding: 2em;
+}
+
+.modal .modal-footer {
+    padding: 0.1em 0.2em;
+}
+
+.modal .warning {
+    background-color: orange;
+    color: white;
+}
+
+.modal .error {
+    background-color: red;
+    color: white;
+}
+
+.modal .normal {
+    background-color: #007bff;
+    color: white;
+}
+
+.modal-title {
+    text-shadow: 1px 1px black;
+}
+
+.oculto {
+    display: none;
+}
+
+.negrita {
+    font-weight: bold;
+}

@@ -1,0 +1,26 @@
+h1 {
+  text-align: center;
+  background-color: rgb(33, 31, 150);
+  color: white;
+}
+
+h2 {
+  background-color: black;
+  text-align: center;
+  color: white;
+}
+
+h3 {
+  background-color: red;
+  text-align: center;
+  color: white;
+}
+
+img {
+  display: block;
+  margin: auto;
+}
+
+#tabla {
+  border: 1px blue;
+}

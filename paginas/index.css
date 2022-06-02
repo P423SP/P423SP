@@ -1,0 +1,88 @@
+h1 {
+  text-align: center;
+  background-color: rgb(33, 31, 150);
+  color: white;
+}
+
+#content {
+  background-color: white;
+}
+
+.foto {
+  position: absolute;
+}
+
+#imgs {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin-left: 600px;
+}
+
+#imag {
+  width: 100%;
+  display: block;
+  margin: auto;
+  background-color: white;
+}
+
+#logins {
+  font-family: Helvetica Neue;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+iframe {
+  display: block;
+  margin: auto;
+}
+
+#escudo {
+  float: right;
+  width: 10%;
+}
+
+@media (max-width: 1536px) {
+  #llegar {
+    margin-top: 100px;
+  }
+  #escudo {
+    float: right;
+    width: 7%;
+  }
+  #redes {
+    z-index: 999;
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+  }
+  #facebook {
+    width: 50px;
+    margin-right: 10px;
+  }
+}
+
+#facebook {
+  width: 50px;
+  margin-right: 10px;
+}
+#redes {
+  z-index: 999;
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+}
+
+#historia {
+  margin-top: 10px;
+}
+
+/* #novedades {
+  margin-top: 10px;
+} */

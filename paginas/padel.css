@@ -1,0 +1,47 @@
+footer{
+  background-color: black;
+  text-align: center;
+  color: white;
+}
+
+#pista {
+  display: block;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  background-color: rgb(33, 31, 150);
+  color: white;
+}
+
+
+#reserva {
+  margin-left: 500px;
+  margin-right: 500px;
+}
+
+span {
+  margin-left: 200px;
+}
+
+#pistas {
+  width: 50%;
+  margin-left: 100px;
+}
+#horario {
+  width: 50%;
+  margin-left: 100px;
+}
+
+#reservar {
+  margin-top: 50px;
+  margin-left: 180px;
+  margin-bottom: 40px;
+}
+
+#dni {
+  width: 50%;
+  margin-left: 100px;
+
+}

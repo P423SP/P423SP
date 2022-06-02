@@ -1,0 +1,25 @@
+@media (max-width: 1563px) {
+  #new {
+    margin-left: 650px;
+    margin-right: 300px;
+    margin-top: 100px;
+  }
+  #usr {
+    width: 50%;
+  }
+  #dni {
+    width: 50%;
+  }
+  #pass1 {
+    width: 50%;
+  }
+  #pass2 {
+    width: 50%;
+  }
+  #email {
+    width: 50%;
+  }
+  #Cancelar {
+    margin-left: 95px;
+  }
+}

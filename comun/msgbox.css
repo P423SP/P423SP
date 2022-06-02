@@ -1,0 +1,49 @@
+.modal .modal-footer {
+    padding: 0.1em 0.2em;
+}
+
+.modal-footer>button {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+.modal .warning {
+    background-color: orange;
+    color: white;
+}
+
+.modal .error {
+    background-color: red;
+    color: white;
+}
+
+.modal .normal {
+    background-color: #007bff;
+    color: white;
+}
+
+.modal .modal-header {
+    padding: 0.1em 0.2em;
+}
+
+.modal .modal-header .autoclose {
+    background-color: white;
+    color: black;
+    font-size: 1rem;
+    padding: 0.2rem 0.5rem;
+}
+
+.modal .modal-title {
+    text-shadow: 1px 1px black;
+}
+
+.modal .modal-body {
+    padding: 2em;
+}
+
+.modal .modal-content {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.modal .modal-footer.question {
+    justify-content: space-between;
+}
