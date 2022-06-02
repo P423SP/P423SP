@@ -1,0 +1,25 @@
+{
+    "gastronomia": [
+        {
+            "nombre": "Bar Corrales",
+            "direccion": " Carrer Major, 51, 46726 Llocnou de Sant Jeroni, Valencia",
+            "telefono": " 962 89 60 17",
+            "horario": "9:00 - 14:00  16:00 - 19:00",
+            "img": "../imagenes/gastronomia/corrales/3.jpg"
+        },
+        {
+            "nombre": "Pakis Bar",
+            "direccion": "",
+            "telefono": "",
+            "horario": "9:00 - 14:00  16:00 - 19:00",
+            "img": "../imagenes/gastronomia/pakis/1.PNG"
+        },
+        {
+            "nombre": "Venta Andreu",
+            "direccion": " Partida Coll Blanc, 2, 46726, Valencia",
+            "telefono": "962 83 50 40",
+            "horario": "9:00 - 14:00  16:00 - 19:00",
+            "img": "../imagenes/gastronomia/andreu/1.jpg"
+        }
+    ]
+}
