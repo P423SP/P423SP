@@ -4,7 +4,7 @@
             "nombre": "Bar Corrales",
             "direccion": " Carrer Major, 51",
             "telefono": " 962 89 60 17",
-            "horario": "9:00 - 14:00  16:00 - 19:00",
+            "horario": "9:00 - 22:00",
             "especialidad": "Desayuno - Comida - Cena ",
             "img": "../imagenes/gastronomia/corrales/"
         },
