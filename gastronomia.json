@@ -5,6 +5,7 @@
             "direccion": " Carrer Major, 51",
             "telefono": " 962 89 60 17",
             "horario": "9:00 - 14:00  16:00 - 19:00",
+            "especialidad": "Desayuno - Comida - Cena ",
             "img": "../imagenes/gastronomia/corrales/"
         },
         {
@@ -12,6 +13,7 @@
             "direccion": "Ausias March",
             "telefono": "962 55 13 46",
             "horario": "9:00 - 14:00  16:00 - 19:00",
+            "especialidad": "Desayuno ",
             "img": "../imagenes/gastronomia/pakis/"
         },
         {
@@ -19,6 +21,7 @@
             "direccion": " Partida Coll Blanc, 2",
             "telefono": "962 83 50 40",
             "horario": "9:00 - 14:00  16:00 - 19:00",
+            "especialidad": "Desayuno - Comida ",
             "img": "../imagenes/gastronomia/andreu/"
         }
     ]
