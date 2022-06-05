@@ -1,0 +1,31 @@
+body {
+    background-color: gainsboro;
+}
+
+#more {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#contenido {
+    background-color: white;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+
+#gym {
+    margin-left: 10%;
+}
+
+h1 {
+    text-align: center;
+    background-color: rgb(33, 31, 150);
+    color: white;
+}
+
+p {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}

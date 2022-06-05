@@ -23,7 +23,7 @@ function doLogin($dni, $password)
                 $_SESSION['password'] = $reg['password'];
                 $_SESSION['email'] = $reg['email'];
             } else {
-                $data = array('estado' => 'error', 'errorTitulo' => 'Login', 'errorMensaje' => "Usuario '$dni' incorrecto '$password' $passwordHash");
+                $data = array('estado' => 'error', 'errorTitulo' => 'Login', 'errorMensaje' => "Usuario '$dni' incorrecto");
             }
         } else {
             $data = array('estado' => 'error', 'errorTitulo' => 'Login', 'errorMensaje' => "Usuario '$dni' incorrecto");
@@ -45,6 +45,24 @@ function llistarTelefono()
         $sql = "SELECT nombre as Nombre, telefono as Telefono FROM telefonos";
         $r = $db->doQuery($sql);
         $data = $db->query2Data($r, $tituloFuncion, 'No hay telefonos disponibles para listar.');
+    } catch (Exception $e) {
+        $data = array('estado' => 'error', 'errorTitulo' => $tituloFuncion, 'errorMensaje' => $e->getMessage());
+    } finally {
+        $db->closeQuery($r);
+    }
+    return $data;
+}
+
+function listarTrabajadores()
+{
+    global $db;
+    $tituloFuncion = 'listar trabajadores';
+    $r = false;
+
+    try {
+        $sql = "SELECT nombre as Nombre , trabajo as Puesto FROM trabajadores";
+        $r = $db->doQuery($sql);
+        $data = $db->query2Data($r, $tituloFuncion, 'No hay trabajadores disponibles para listar.');
     } catch (Exception $e) {
         $data = array('estado' => 'error', 'errorTitulo' => $tituloFuncion, 'errorMensaje' => $e->getMessage());
     } finally {
@@ -109,7 +127,7 @@ function editarUser($name, $dni, $email, $emailn, $password)
             } else if ($password == '') {
                 if ($emailn == $reg['email']) {
                     throw new Exception("El Correo ya esta en uso");
-                } else if($emailn == $email) {
+                } else if ($emailn == $email) {
                     throw new Exception("El Correo ya esta en uso");
                 } else {
                     $db->doExecute("UPDATE usuarios SET name=?, email=? WHERE dni=?", array($name, $emailn, $dni));
@@ -201,6 +219,34 @@ function eliminarReserva($pista, $hora, $dni)
     }
     return $data;
 }
+function eliminarReservaADM($pista, $hora)
+{
+    global $db;
+    $tituloFuncion = 'Eliminar Reservar';
+
+    try {
+        $reg = $db->getSQLRegister("SELECT  pista, hora, usr_dni from reservas  where pista=? and hora=?", array($pista, $hora));
+        if ($db->beginTransaction() === false) throw new Exception("La BD no pudo iniciar la transacción.");
+
+        if ($reg) {
+            if ($reg['pista'] == $pista && $reg['hora'] == $hora) {
+                $db->doExecute('DELETE FROM reservas WHERE (pista =? and hora=? and reserva=? )', array($pista, $hora, 1));
+                $data = array('estado' => 'success');
+            } else {
+                throw new Exception("La hora seleccionada no esta disponible");
+            }
+        } else {
+            $db->doExecute('DELETE FROM reservas WHERE (pista =?, hora=?, reserva=?)', array($pista, $hora, 1));
+            $data = array('estado' => 'success');
+        }
+        $db->commitTransaction();
+    } catch (Exception $e) {
+        $data = array('estado' => 'error', 'errorTitulo' => $tituloFuncion, 'errorMensaje' => $e->getMessage());
+    } finally {
+        $db->rollbackTransaction();
+    }
+    return $data;
+}
 
 function listarReservas($dni)
 {
@@ -231,6 +277,97 @@ function listarReservasP()
     return $data;
 }
 
+function listarReservasAdm()
+{
+    global $db;
+    $tituloFuncion = 'Listar Reserva';
+    try {
+        $r = $db->doQuery("SELECT res.pista as 'Pista' , res.hora as 'Hora' , us.name as 'Usuario' FROM reservas as res left join usuarios as us on us.dni = res.usr_dni order by pista");
+        $data = $db->query2Data($r, $tituloFuncion, 'No hay reservas disponibles');
+    } catch (Exception $e) {
+        $data = array('estado' => 'error', 'errorTitulo' => $tituloFuncion, 'errorMensaje' => $e->getMessage());
+    } finally {
+        $db->closeQuery($r);
+    }
+    return $data;
+}
+
+function listarMaquinas()
+{
+    global $db;
+    $tituloFuncion = 'Listar Maquinas';
+    try {
+        $r = $db->doQuery("SELECT maquina as 'Maquina', ejercicio FROM gimnasio");
+        $data = $db->query2Data($r, $tituloFuncion, 'No hay maquinas disponibles');
+    } catch (Exception $e) {
+        $data = array('estado' => 'error', 'errorTitulo' => $tituloFuncion, 'errorMensaje' => $e->getMessage());
+    } finally {
+        $db->closeQuery($r);
+    }
+    return $data;
+}
+
+function editarMaquina($maquina, $maquinan, $ejercicios)
+{
+    global $db;
+    $tituloFuncion = 'Editar Maquina';
+    try {
+        $reg = $db->getSQLRegister("SELECT * FROM gimnasio WHERE maquina = ?", array($maquina));
+        // echo $maquina;
+        if ($reg['maquina'] == $maquina) {
+            $db->doExecute('UPDATE gimnasio SET maquina = ? and ejercicio = ?   WHERE maquina = ?', array($maquinan, $ejercicios, $maquina));
+            $data = array('estado' => 'success');
+        } else {
+            throw new Exception("La maquina no se pudo editar");
+        }
+    } catch (Exception $e) {
+        $data = array('estado' => 'error', 'errorTitulo' => $tituloFuncion, 'errorMensaje' => $e->getMessage());
+    }
+    return $data;
+}
+
+function eliminarMaquina($maquina)
+{
+    global $db;
+    $tituloFuncion = 'Eliminar Maquina';
+    try {
+        $reg = $db->getSQLRegister("SELECT * FROM gimnasio WHERE maquina = ?", array($maquina));
+        if ($db->beginTransaction() === false) throw new Exception("La BD no pudo iniciar la transacción.");
+        if ($reg) {
+            $db->doExecute('DELETE FROM gimnasio WHERE maquina = ?', array($maquina));
+            $data = array('estado' => 'success');
+        } else {
+            throw new Exception("La maquina no existe");
+        }
+    } catch (Exception $e) {
+        $data = array('estado' => 'error', 'errorTitulo' => $tituloFuncion, 'errorMensaje' => $e->getMessage());
+    } finally {
+        $db->commitTransaction();
+    }
+    return $data;
+}
+
+function añadirMaquina($maquina, $ejercicios)
+{
+    global $db;
+    $tituloFuncion = 'Añadir Maquina';
+    try {
+        $reg = $db->getSQLRegister("SELECT * FROM gimnasio WHERE maquina = ?", array($maquina));
+        if ($db->beginTransaction() === false) throw new Exception("La BD no pudo iniciar la transacción.");
+        if ($reg) {
+            throw new Exception("La maquina ya existe");
+        } else {
+            $db->doExecute('INSERT INTO gimnasio (maquina, ejercicio) VALUES (?, ?)', array($maquina, $ejercicios));
+            $data = array('estado' => 'success');
+        }
+    } catch (Exception $e) {
+        $data = array('estado' => 'error', 'errorTitulo' => $tituloFuncion, 'errorMensaje' => $e->getMessage());
+    } finally {
+        $db->commitTransaction();
+    }
+    return $data;
+}
+
 try {
     $fn = new apiFunction($_POST);
     $funcion = $fn->getFunction();
@@ -240,6 +377,8 @@ try {
         $data = $funcion(...$fn->getParametrosAPI());
     } else {
         if ($fn->checkArgs('llistarTelefono')) {
+            $data = $funcion(...$fn->getParametrosAPI());
+        } else if ($fn->checkArgs('listarTrabajadores')) {
             $data = $funcion(...$fn->getParametrosAPI());
         } elseif ($fn->checkArgs('crearUser', 'usuario', 'pass1', 'email', 'dni')) {
             $data = $funcion(...$fn->getParametrosAPI());
@@ -251,7 +390,19 @@ try {
             $data = $funcion(...$fn->getParametrosAPI());
         } elseif ($fn->checkArgs('listarReservasP')) {
             $data = $funcion(...$fn->getParametrosAPI());
+        } elseif ($fn->checkArgs('listarReservasAdm')) {
+            $data = $funcion(...$fn->getParametrosAPI());
         } elseif ($fn->checkArgs('eliminarReserva', 'pista', 'hora', 'dni')) {
+            $data = $funcion(...$fn->getParametrosAPI());
+        } elseif ($fn->checkArgs('eliminarReservaADM', 'pista', 'hora')) {
+            $data = $funcion(...$fn->getParametrosAPI());
+        } elseif ($fn->checkArgs('listarMaquinas')) {
+            $data = $funcion(...$fn->getParametrosAPI());
+        } elseif ($fn->checkArgs('editarMaquina', 'maquina', 'maquinan', 'ejercicios')) {
+            $data = $funcion(...$fn->getParametrosAPI());
+        } elseif ($fn->checkArgs('eliminarMaquina', 'maquina')) {
+            $data = $funcion(...$fn->getParametrosAPI());
+        } elseif ($fn->checkArgs('añadirMaquina', 'maquina', 'ejercicios')) {
             $data = $funcion(...$fn->getParametrosAPI());
         } else {
             throw new Exception("La función '$funcion' no está implementada");

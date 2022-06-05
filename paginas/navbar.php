@@ -7,7 +7,7 @@ if (isset($_SESSION['dni'])) {
 ?>
 <div>
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
-        <a class="navbar-brand" href="#"><img src="/WSServer/TFG/imagenes/navbar/icono.png"></a>
+        <a class="navbar-brand" href="#"><img id='logo' src="../imagenes/navbar/icono.png"></a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -16,28 +16,27 @@ if (isset($_SESSION['dni'])) {
                 <li class="nav-item active">
                     <a class="nav-link" href="Index.php">Inicio</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="deporte" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ayuntamiento</a>
-                    <div class="dropdown-menu" aria-labelledby="deporte">
-                        <a class="dropdown-item" href="#">Papeles</a>
-                        <a class="dropdown-item" href="telefonos.php">Telefonos</a>
-                    </div>
+                <li class="nav-item active">
+                    <a class="nav-link" href="Ayuntamiento.php">Ayuntamiento</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="deporte" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Deporte</a>
-                    <div class="dropdown-menu" aria-labelledby="deporte">
+                    <div class="dropdown-menu" aria-labelledby="opciones">
                         <a class="dropdown-item" href="padel.php">Padel</a>
-                        <a class="dropdown-item" href="#">Gimnasio</a>
+                        <a class="dropdown-item" href="gimnasio.php">Gimnasio</a>
                     </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="agricultura.php">Agricultura</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="deporte" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Turismo</a>
+                    <a class="nav-link dropdown-toggle" id="turismo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Turismo</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="gastronomia.php">Gastronomia</a>
-                        <a class="dropdown-item" href="#">Senderismo</a>
+                        <a class="dropdown-item" href="senderismo.php">Senderismo</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="contacto.php">Contacto</a>
                 </li>
             </ul>
             <?php
@@ -45,7 +44,7 @@ if (isset($_SESSION['dni'])) {
                 <div id='usuario'>
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item dropdown">
-                            <?php echo ("<a class='nav-link dropdown-toggle' id='deporte' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>" . strtoupper($_SESSION['name']) . "</a>") ?>
+                            <?php echo ("<a class='nav-link dropdown-toggle' id='perfil' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>" . strtoupper($_SESSION['name']) . "</a>") ?>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="perfil.php">Perfil</a>
                                 <a class="dropdown-item" href="logout.php">Salir</a>

@@ -1,26 +1,82 @@
-h1 {
-  text-align: center;
-  background-color: rgb(33, 31, 150);
-  color: white;
+body{
+  background-color: gainsboro;
 }
 
-h2 {
-  background-color: black;
-  text-align: center;
-  color: white;
+@media (max-width: 1536px) {
+  h1 {
+    text-align: center;
+    background-color: rgb(33, 31, 150);
+    color: white;
+  }
+  
+  h2 {
+    background-color: black;
+    text-align: center;
+    color: white;
+  }
+  
+  h3 {
+    background-color: red;
+    text-align: center;
+    color: white;
+  }
+  
+  img {
+    display: block;
+    margin: auto;
+  }
+  
+  #tabla {
+    border: 1px blue;
+  }
 }
 
-h3 {
-  background-color: red;
-  text-align: center;
-  color: white;
-}
+@media (max-width: 1920px) {
+  h1 {
+    text-align: center;
+    background-color: rgb(33, 31, 150);
+    color: white;
+  }
+  
+  #content {
+    background-color: white;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
 
-img {
-  display: block;
-  margin: auto;
-}
+  h2 {
+    background-color: black;
+    text-align: center;
+    color: white;
+  }
+  
+  h3 {
+    background-color: red;
+    text-align: center;
+    color: white;
+  }
+  
+  img {
+    display: block;
+    margin: auto;
+  }
+  
+  #tabla {
+    border: 1px blue;
+  }
 
-#tabla {
-  border: 1px blue;
+  #normas{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  #prohibiciones{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
 }
+  

@@ -1,0 +1,15 @@
+body{
+  background-color: gainsboro;
+}
+
+h1 {
+    text-align: center;
+    background-color: rgb(33, 31, 150);
+    color: white;
+  }
+
+  #content {
+    background-color: white;
+    margin-left: 10%;
+    margin-right: 10%;
+  }

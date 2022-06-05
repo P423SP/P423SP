@@ -38,38 +38,46 @@ $conectado = isset($_SESSION['dni']);
 <body>
     <?php include('navbar.php'); ?>
 
-    <h1>PISTAS</h1>
-    <img id="pista" src='../imagenes/deportes/padel/1.png'>
-    <h1>RESERVAS</h1>
-    <div id='tabla' class='mt-2'>
-        <tabla id='lista' class='table table-sm table-bordered'></tabla>
-    </div>
-    <h1>FORMULARIO DE RESERVA</h1>
-    <div id="reserva">
-        <span>PISTA</span><br>
-        <select id='pistas' class='custom-select mt-1'>
-            <option value='Pista 1'>Pista 1</option>
-            <option value='Pista 2'>Pista 2</option>
-            <option value='Pista 3'>Pista 3</option>
-        </select>
-        <br>
-        <span>HORA</span><br>
-        <select id='horario' class='custom-select mt-1'>
-            <option value='8:00 - 9:00'>8:00 - 9:00</option>
-            <option value='9:00 - 10:00'>9:00 - 10:00</option>
-            <option value='10:00 - 11:00'>10:00 - 11:00</option>
-            <option value='12:00 - 13:00'>12:00 - 13:00</option>
-            <option value='13:00 - 14:00'>13:00 - 14:00</option>
-            <option value='14:00 - 15:00'>14:00 - 15:00</option>
-        </select>
-        <br>
-        <?php if ($conectado) { ?>
-            <?php echo '<input type="text"  id="dni" value="'.$_SESSION['dni'].'" hidden>' ?>
-            <button id='reservar' class="btn btn-primary">Reservar</button>
-        <?php } else { ?>
-            <button id='reservar' class="btn btn-primary" disabled>Reservar</button>
-        <?php } ?>
-        <br>
+    <div id="content">
+        <h1>PISTAS</h1>
+        <img id="pista" src='../imagenes/deportes/padel/2.png'>
+
+        <h1>INFORMACIÓN</h1>
+            <p>Las pistas de padel estan situadas en las cercanias de la piscina municipal, contando con un parking situado a continuación de  estas proporcionando un acceso comodo para cualquira.
+                <br>La  pista de padel esta disponible para todos los deportistas que deseen practicar la padel, tambien cuenta con bancos para tanto para descansar como para observar los partido,
+                 las reservas se realizan mediante la web del ayuntamiento, aunque por las tardes essta permitido el acceso libre sin reserva.
+            </p>
+        <h1>RESERVAS</h1>
+        <div id='tabla' class='mt-2'>
+            <tabla id='lista' class='table table-sm table-bordered'></tabla>
+        </div>
+        <h1>FORMULARIO DE RESERVA</h1>
+        <div id="reserva">
+            <span>PISTA</span><br>
+            <select id='pistas' class='custom-select mt-1'>
+                <option value='Pista 1'>Pista 1</option>
+                <option value='Pista 2'>Pista 2</option>
+                <option value='Pista 3'>Pista 3</option>
+            </select>
+            <br>
+            <span>HORA</span><br>
+            <select id='horario' class='custom-select mt-1'>
+                <option value='8:00 - 9:00'>8:00 - 9:00</option>
+                <option value='9:00 - 10:00'>9:00 - 10:00</option>
+                <option value='10:00 - 11:00'>10:00 - 11:00</option>
+                <option value='12:00 - 13:00'>12:00 - 13:00</option>
+                <option value='13:00 - 14:00'>13:00 - 14:00</option>
+                <option value='14:00 - 15:00'>14:00 - 15:00</option>
+            </select>
+            <br>
+            <?php if ($conectado) { ?>
+                <?php echo '<input type="text"  id="dni" value="' . $_SESSION['dni'] . '" hidden>' ?>
+                <button id='reservar' class="btn btn-primary">Reservar</button>
+            <?php } else { ?>
+                <button id='reservar' class="btn btn-primary" disabled>Reservar</button>
+            <?php } ?>
+            <br>
+        </div>
     </div>
 </body>
 <?php include('footer.php'); ?>

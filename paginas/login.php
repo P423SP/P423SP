@@ -8,11 +8,11 @@ session_start();
 <head>
     <meta charset="utf-8">
     <title>Login</title>
-    <link rel='stylesheet' type='text/css' media='screen' href='login.css'>
     <link rel='stylesheet' href="../comun/comun.css">
     <link rel='stylesheet' href="../comun/msgbox.css">
     <link rel='stylesheet' href="../comun/dbaseload.css">
     <link rel='stylesheet' href='../boostrap2/css/bootstrap.min.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='login.css'>
     <script src="../jquery/jquery-3.6.0.min.js"></script>
     <script src="https://kit.fontawesome.com/5da91507d8.js" crossorigin="anonymous"></script>
     <script src='../boostrap2/js/bootstrap.min.js'></script>

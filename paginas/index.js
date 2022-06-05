@@ -20,6 +20,6 @@ function rotarImagenes() {
 
 $(function () {
 
-    setInterval(function () { rotarImagenes()}, 1000);
+    setInterval(function () { rotarImagenes()}, 3000);
 
 });

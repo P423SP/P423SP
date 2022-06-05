@@ -11,8 +11,6 @@
 }
 
 .table thead {
-    /* background-color: #652D86; */
-    /* color: white; */
     position:sticky;
     top:0;
     z-index:10;
@@ -46,23 +44,9 @@
 }
 
 .table tbody tr:nth-child(even) {
-    /* background-color: #d7d7d724; */
     background-color: #b0b0b024;
 }
 
-.table tbody tr.success {
-    background-color: lime !important; 
-    color:black !important;
-}
-
-.table tbody tr.warning {
-    background-color: yellow;
-}
-
-.table tbody tr.error {
-    background-color: red !important;
-    color:white !important;
-}
 
 .table .celdaFija {
     width: 1%;
@@ -72,6 +56,5 @@
 
 .table .celdaVariable {
     vertical-align:middle;
-    /* width:100%; */
 }
 

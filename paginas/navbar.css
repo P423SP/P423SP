@@ -5,3 +5,26 @@
 #usuario {
     margin-right: 100px;
 }
+
+#logo{
+    width: 60px;
+    margin-left: 20px;
+    margin-right: 50px;
+}
+
+@media (max-width: 1920) {
+    #usuario {
+        margin-right: 100px;
+    }
+
+    .dropdown-menu {
+        position: unset;
+    }
+
+   #logo{
+        width: 60px;
+        margin-left: 20px;
+        margin-right: 50px;
+    }
+
+}

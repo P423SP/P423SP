@@ -4,24 +4,66 @@
     background-color: rgb(33, 31, 150);
     color: white;
   }
+
   nav {
     display: block;
   }
+
   #opciones {
     float: left;
     position: relative;
     text-align: center;
   }
+
   #info {
     display: grid;
     width: 17%;
     margin-left: 650px;
   }
+
   a {
     color: black;
     margin-top: 10px;
     margin-bottom: 10px;
-    font-family: Helvetica Neue;
+  }
+
+  #guardar {
+    margin-top: 20px;
+  }
+
+  #icperfil {
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 1920px) {
+  h1 {
+    text-align: center;
+    background-color: rgb(33, 31, 150);
+    color: white;
+  }
+
+  nav {
+    display: block;
+  }
+
+  #opciones {
+    float: left;
+    position: relative;
+    text-align: center;
+  }
+
+  #info {
+    display: grid;
+    width: 17%;
+    margin-left: 650px;
+  }
+
+  a {
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
   #guardar {

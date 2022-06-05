@@ -1,47 +1,115 @@
-footer{
-  background-color: black;
-  text-align: center;
-  color: white;
+body{
+  background-color: gainsboro;
 }
 
-#pista {
-  display: block;
-  margin: auto;
+@media (max-width :1563px) {
+  #pista {
+    display: block;
+    margin: auto;
+  }
+
+  h1 {
+    text-align: center;
+    background-color: rgb(33, 31, 150);
+    color: white;
+  }
+
+
+  #reserva {
+    margin-left: 500px;
+    margin-right: 500px;
+  }
+
+  span {
+    margin-left: 200px;
+  }
+
+  #pistas {
+    width: 50%;
+    margin-left: 100px;
+  }
+
+  #horario {
+    width: 50%;
+    margin-left: 100px;
+  }
+
+  #reservar {
+    margin-top: 50px;
+    margin-left: 180px;
+    margin-bottom: 40px;
+  }
+
+  #dni {
+    width: 50%;
+    margin-left: 100px;
+
+  }
+
+  p {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }
 
-h1 {
-  text-align: center;
-  background-color: rgb(33, 31, 150);
-  color: white;
-}
+@media (max-width :1920px) {
+  #pista {
+    display: block;
+    margin: auto;
+  }
 
+  #content {
+    background-color: white;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  
+  h1 {
+    text-align: center;
+    background-color: rgb(33, 31, 150);
+    color: white;
+  }
 
-#reserva {
-  margin-left: 500px;
-  margin-right: 500px;
-}
+  #reserva {
+    margin-left: 500px;
+    margin-right: 500px;
+  }
 
-span {
-  margin-left: 200px;
-}
+  span {
+    margin-left:230px;
+  }
 
-#pistas {
-  width: 50%;
-  margin-left: 100px;
-}
-#horario {
-  width: 50%;
-  margin-left: 100px;
-}
+  #pistas {
+    width: 50%;
+    margin-left: 130px;
+    text-align: center;
+  }
 
-#reservar {
-  margin-top: 50px;
-  margin-left: 180px;
-  margin-bottom: 40px;
-}
+  #horario {
+    width: 50%;
+    margin-left: 130px;
+    text-align: center;
+  }
 
-#dni {
-  width: 50%;
-  margin-left: 100px;
+  #reservar {
+    margin-top: 50px;
+    margin-left: 220px;
+    margin-bottom: 40px;
+  }
+
+  #dni {
+    width: 50%;
+    margin-left: 100px;
+
+  }
+
+  #tabla{
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 
 }

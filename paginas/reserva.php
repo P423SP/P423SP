@@ -7,9 +7,10 @@ $db->conectarDB();
 
 $conectado = isset($_SESSION['dni']);
 
-if (!isset($conectado)) {
+if (!isset($conectado) || $conectado == '') {
     header('Location: login.php');
 }
+
 ?>
 
 <!Doctype html>
@@ -29,7 +30,7 @@ if (!isset($conectado)) {
     <link rel='stylesheet' href="../comun/tablas.css">
     <link rel="stylesheet" href='perfil.css'>
     <link rel="stylesheet" href='footer.css'>
-    
+
     <script src='../comun/msgbox.js'></script>
     <script src='../comun/tablas.js'></script>
     <script src='../comun/api.js'></script>
@@ -51,7 +52,9 @@ if (!isset($conectado)) {
             </iron-selector>
             </cr-menu-select>
     </div>
-    <?php echo '<input type="text"  id="dni" value="'.$_SESSION['dni'].'" hidden>' ?>
+
+    <?php if(isset($conectado)){ echo '<input type="text"  id="dni" value="' . $_SESSION['dni'] . '" hidden>';} ?>
+
     <div id='tabla' class='mt-2'>
         <tabla id='lista' class='table table-sm table-bordered'></tabla>
     </div>
