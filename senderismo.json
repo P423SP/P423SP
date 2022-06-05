@@ -4,19 +4,22 @@
             "nombre": "La Cuta",
             "distancia": "16,41km",
             "desnivel": "735m",
-            "img": "../imagenes/senderismo/ruta 1/"
+            "img": "../imagenes/senderismo/ruta 1/",
+            "ruta": "../imagenes/senderismo/ruta 1/ruta/1.png"
         },
         {
             "nombre": "Vernissa a la Cuta",
             "distancia": "12,95km",
             "desnivel": "805m",
-            "img": "../imagenes/senderismo/ruta 2/"
+            "img": "../imagenes/senderismo/ruta 2/",
+             "ruta": "../imagenes/senderismo/ruta 2/ruta/1.png"
         },
         {
             "nombre": "Penya dels forcalls",
             "distancia": "15,69km",
             "desnivel": "836m",
-            "img": "../imagenes/senderismo/ruta 3/"
+            "img": "../imagenes/senderismo/ruta 3/",
+             "ruta": "../imagenes/senderismo/ruta 3/ruta/1.png"
         }
     ]
 }
